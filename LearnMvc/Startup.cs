@@ -32,6 +32,9 @@ namespace LearnMvc
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            // データベースにアクセスする
+            services.AddDbContext<testdbContext>();
+            services.AddMvc();
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
